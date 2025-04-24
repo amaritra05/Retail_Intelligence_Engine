@@ -1,0 +1,10 @@
+[paths]
+amazon_sales = "data/AmazonSaleReport.csv"
+international_sales = "data/InternationalSaleReport.csv"
+sale_report = "data/SaleReport.csv"
+pl_files = ["data/PLMarch2021.csv", "data/May2022.csv"]
+
+[ml]
+model_type = "RandomForest"
+predict_features = ["sku", "date", "ship_state"]
+target = "revenue"

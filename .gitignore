@@ -1,0 +1,72 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Logs and runtime files
+logs/
+*.log
+
+# Virtual environment
+env/
+.venv/
+venv/
+ENV/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# IDE settings
+.vscode/
+.idea/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Test results
+htmlcov/
+.tox/
+.nox/
+.coverage
+coverage.xml
+*.cover
+*.py,cover
+
+# pytest cache
+.pytest_cache/
+
+# mypy
+.mypy_cache/
+
+# h2o files
+h2o_*.log
+h2ologs/
+
+# TOML config secrets (if any)
+config/config.toml
+
+# Data & model artifacts (update if needed)
+*.csv
+*.xlsx
+*.h5
+*.h2o
+*.pkl
+*.joblib
+*.sav
+models/
+artifacts/
+
+# FastAPI Swagger cache
+openapi.json
+
+# Environment variable files
+.env
+.env.*
+
+# Docker (if used)
+*.pid
+*.tar
+*.gz
+*.zip
+docker-compose.override.yml
