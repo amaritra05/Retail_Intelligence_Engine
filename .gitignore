@@ -54,8 +54,7 @@ config/config.toml
 *.pkl
 *.joblib
 *.sav
-models/
-artifacts/
+
 
 # FastAPI Swagger cache
 openapi.json
