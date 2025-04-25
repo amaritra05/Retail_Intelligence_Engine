@@ -50,7 +50,7 @@ Content-Type: application/json
 
 ### Request:
 ```http
-GET /top-skus/2025/5/revenue/5
+GET /top-skus/2022/4/revenue/5
 ```
 
 ### Response:

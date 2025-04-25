@@ -46,7 +46,7 @@ h2ologs/
 
 
 # Data & model artifacts (update if needed)
-
+*.csv
 *.xlsx
 *.h5
 *.h2o
