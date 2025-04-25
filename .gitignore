@@ -43,11 +43,10 @@ coverage.xml
 h2o_*.log
 h2ologs/
 
-# TOML config secrets (if any)
-config/config.toml
+
 
 # Data & model artifacts (update if needed)
-*.csv
+
 *.xlsx
 *.h5
 *.h2o
