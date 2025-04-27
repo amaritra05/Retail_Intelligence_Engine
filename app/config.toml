@@ -1,8 +1,8 @@
 [paths]
-amazon_sales = "data/AmazonSaleReport.csv"
-international_sales = "data/InternationalSaleReport.csv"
-sale_report = "data/SaleReport.csv"
-pl_files = ["data/PLMarch2021.csv", "data/May2022.csv"]
+amazon_sales = "app/data/AmazonSaleReport.csv"
+international_sales = "app/data/InternationalSaleReport.csv"
+sale_report = "app/data/SaleReport.csv"
+pl_files = ["app/data/PLMarch2021.csv", "app/data/May2022.csv"]
 
 [ml]
 model_type = "RandomForest"

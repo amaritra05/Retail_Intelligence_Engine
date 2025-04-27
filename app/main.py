@@ -1,7 +1,6 @@
 from fastapi import FastAPI
 from loguru import logger
-from routes.api import router as api_router
-
+from app.routes.api import router as api_router
 
 app = FastAPI(title="Retail Forecasting API")
 

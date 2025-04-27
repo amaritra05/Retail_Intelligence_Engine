@@ -6,30 +6,21 @@ import json
 
 class RevenueModel:
     def __init__(self):
-        self.models = {}
-        self.dummy = H2OGeneralizedLinearEstimator()
+        self.model = None
 
-    def train(self, data, predictors, response, model_type="glm"):
+    def train(self, train_data, predictors, response, model_type="glm"):
         if model_type == "glm":
-            model = H2OGeneralizedLinearEstimator()
+            self.model = H2OGeneralizedLinearEstimator(family="gaussian")
         elif model_type == "rf":
-            model = H2ORandomForestEstimator()
-        model.train(x=predictors, y=response, training_frame=data)
-        self.models[model_type] = model
-        self._log_metadata(model_type, predictors, model.r2())
+            self.model = H2ORandomForestEstimator()
+        else:
+            raise ValueError(f"Unsupported model_type: {model_type}")
+        
+        self.model.train(x=predictors, y=response, training_frame=train_data)
 
-    def predict(self, data, model_type="glm"):
-        if model_type in self.models:
-            pred = self.models[model_type].predict(data)
-            return pred.as_data_frame().iloc[0, 0]
-        return 0.0
-
-    def _log_metadata(self, model_name, features, r2_score):
-        meta = {
-            "model": model_name,
-            "features": features,
-            "r2_score": r2_score,
-            "timestamp": str(datetime.now())
-        }
-        with open(f"logs/{model_name}_metadata.json", "w") as f:
-            json.dump(meta, f)
+    def predict(self, new_data):
+        if self.model is None:
+            raise ValueError("Model is not trained yet")
+        
+        preds = self.model.predict(new_data)
+        return preds.as_data_frame().values.flatten().tolist()[0]

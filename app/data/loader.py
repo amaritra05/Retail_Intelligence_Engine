@@ -1,7 +1,7 @@
 import h2o
 import pandas as pd
-from config.config_loader import AppConfig
-from services.preprocess import clean_data, normalize_columns
+from app.config.config_loader import AppConfig
+from app.services.preprocess import clean_data, normalize_columns
 
 h2o.init()
 
@@ -18,4 +18,7 @@ def load_all_data(config: AppConfig):
             data[key] = [normalize_columns(df) for df in data[key]]
         else:
             data[key] = normalize_columns(data[key])
+
+    data['sale']['sku']=data['sale']['sku_code']
+    
     return data
